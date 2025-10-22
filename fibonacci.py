@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 
 def get_input():
-    user_input = input("User input: ")
-    m = int(user_input) 
-    if user_input.isdigit() and m > 0:
-      return int(user_input)
-    else:
-      print("Error, enter valid input")
+    while True:  
+        user_input = input("User input: ")
+        if user_input.isdigit():
+            m = int(user_input)
+            if m > 0:
+                return m
+            else:
+                print("Error, enter a positive input")
+        else:
+            print("Error, enter valid input")
 
 def get_calculation(m):
   a = 0
