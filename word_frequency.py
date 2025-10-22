@@ -28,6 +28,11 @@ def is_sentence(text):
 def get_sentence():
     user_sentence = input("Enter a sentence: ")
     sentence = user_sentence.split(" ")
+     sentence = []
+    for word in input_sentence:
+        word = word.lower().strip(".,!?")
+        if word != "":  
+            sentence += [word]
     return sentence
 
 def calculate_frequencies(sentence):
