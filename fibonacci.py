@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
 
 def get_input():
-  user_input = input("User input: ")
-  if user_input.isadigit() and int(user_input) > 0:
-    return int(user_input)
-  else:
-    print("Error, enter valid input")
+    user_input = input("User input: ")
+    m = int(user_input) 
+    if user_input.isdigit() and m > 0:
+      return int(user_input)
+    else:
+      print("Error, enter valid input")
 
-def get_calculation(i):
+def get_calculation(m):
   a = 0
   b = 1
-  for _ in range(i):
+  sequence = []
+  for i in range(m):
+      sequence += [a]
       a, b = b, a + b
+  return sequence
+
 
 def fib_output(sequence):
   for num in sequence:
@@ -19,9 +24,9 @@ def fib_output(sequence):
   print(" ")
 
 def main():
-  get_input()
-  get_calculation(get_input))
-  fib_output(get_calculation))
+  m = get_input()
+  sequence = get_calculation(m)
+  fib_output(sequence)
 
 
 main()
