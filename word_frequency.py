@@ -24,3 +24,36 @@ def is_sentence(text):
         return False
 
     return True
+
+def get_sentence():
+    user_sentence = input("Enter a sentence: ")
+    sentence = user_sentence.split(" ")
+    return sentence
+
+def calculate_frequencies(sentence):
+    words = []
+    frequencies = []
+
+    for word in sentence:
+            found = False
+            for i in range(len(words)):
+                if words[i] == word:
+                    frequencies[i] = frequencies[i] + 1
+                    found = True
+                    break
+            if not found:
+                words = words + [word]
+                frequencies = frequencies + [1]
+    return words, frequencies 
+
+
+def print_frequencies(words, frequencies):
+    for i in range(len(words)):
+        print(words[i] + ":", frequencies[i])  
+
+def main():
+    sentence = get_sentence()
+    words, frequencies = calculate_frequencies(sentence)
+    print_frequencies(words, frequencies)
+
+main()
